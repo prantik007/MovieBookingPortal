@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Create three equal columns that floats next to each other */
+  .column {
+    float: left;
+    
+   
+    
+  }
+  .left{
+      width: 33.33%;
+  }
+  .right{
+      width: 66.66%;
+      background-color: blanchedalmond;
+      
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .carousel{
+      width: 500px;
+  }
