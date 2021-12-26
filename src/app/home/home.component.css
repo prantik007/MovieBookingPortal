@@ -1,21 +1,29 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
   
   /* Create three equal columns that floats next to each other */
   .column {
     float: left;
+    margin: 0;
+    
     
    
     
   }
   .left{
-      width: 33.33%;
+      width: 30%;
+      background-color: aqua;
   }
   .right{
-      width: 66.66%;
+      width: 70%;
       background-color: blanchedalmond;
       
+  }
+  .row{
+      margin: 0;
   }
   
   /* Clear floats after the columns */
