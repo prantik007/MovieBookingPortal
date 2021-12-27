@@ -11,6 +11,7 @@ import { MyAccountComponent } from './my-account/my-account.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     RegisterComponent,
     MyAccountComponent,
     ContactUsComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    LoginComponent
     
   ],
   imports: [

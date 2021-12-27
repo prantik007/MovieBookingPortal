@@ -1,0 +1,12 @@
+.navbar-nav{
+    margin-left: 30%;
+    float: left;
+    position: relative;
+    font-size: 150%;
+    
+    
+}
+li{
+    padding-left: 20px;
+    padding-right: 0px;
+}

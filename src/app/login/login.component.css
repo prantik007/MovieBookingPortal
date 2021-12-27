@@ -7,17 +7,5 @@
 body{
   justify-content: center;
   margin-left: 35%;
-  margin-right: 10%;
-}
-input{
-  width: 55%;
-  
-}
-select{
-  
-  width: 55%;
-
-}
-hr{
-  width: 55%;
+  margin-right: 35%;
 }

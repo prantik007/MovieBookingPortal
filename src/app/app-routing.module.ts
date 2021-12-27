@@ -7,6 +7,7 @@ import { RegisterComponent } from './register/register.component';
 import { MyAccountComponent } from './my-account/my-account.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   { path:'home', component: HomeComponent },
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path:'register' , component:RegisterComponent },
   { path:'my-account' , component: MyAccountComponent},
   { path:'contact-us' , component: ContactUsComponent},
-  { path:'about-us' , component: AboutUsComponent}
+  { path:'about-us' , component: AboutUsComponent},
+  { path:'login', component:LoginComponent}
   
 ];
 
