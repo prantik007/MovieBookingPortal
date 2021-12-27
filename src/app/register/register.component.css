@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+body{
+  justify-content: center;
+  margin-left: 30%;
+  margin-right: 10%;
+}
+input{
+  width: 55%;
+  
+}
+select{
+  
+  width: 55%;
+
+}
+hr{
+  width: 55%;
+}

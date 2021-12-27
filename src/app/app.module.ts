@@ -5,12 +5,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
+import { BookTicketsComponent } from './book-tickets/book-tickets.component';
+import { RegisterComponent } from './register/register.component';
+import { MyAccountComponent } from './my-account/my-account.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    BookTicketsComponent,
+    RegisterComponent,
+    MyAccountComponent,
+    ContactUsComponent,
+    AboutUsComponent
+    
   ],
   imports: [
     BrowserModule,

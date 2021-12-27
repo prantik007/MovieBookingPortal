@@ -8,10 +8,8 @@
   .column {
     float: left;
     margin: 0;
-    
-    
-   
-    
+    justify-content: center;   
+    padding: 10px;
   }
   .left{
       width: 30%;
@@ -33,5 +31,5 @@
     clear: both;
   }
   .carousel{
-      width: 500px;
+      width: 800px; ;
   }
