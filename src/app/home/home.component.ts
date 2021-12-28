@@ -14,7 +14,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  
+    image_name=["Rio","Spiderman","Wolves"];
+    image_caption=["BlueSky","Marvel Studios","Marvel Studios"];
     images = ["assets/images/rio2.png","assets/images/spiderman.png","assets/images/wolves.png"];
   
 }
