@@ -8,9 +8,10 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 })
 export class RegisterComponent implements OnInit {
 
-  
-  
-  constructor() { }
+ 
+  constructor() { 
+    
+  }
 
 
   ngOnInit(): void {
