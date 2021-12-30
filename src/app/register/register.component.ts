@@ -58,11 +58,7 @@ export class RegisterComponent implements OnInit {
         this.isFormValid=false;
       }
 
-      if(!this.regexp.test(this.email))
-      {
-        this.error_email="Invalid email format";
-        this.isFormValid=false;
-      }
+      
 
       if(this.isFormValid){ //code to submit form to database
 
