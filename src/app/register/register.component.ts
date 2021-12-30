@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { MyServiceService } from '../my-service.service';
+
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-import { User } from '../user';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -10,21 +10,18 @@ import { User } from '../user';
 export class RegisterComponent implements OnInit {
 
  
-   users: User[];
-  constructor(private userService: MyServiceService) { 
+   
+  constructor() { 
     
   }
 
 
   ngOnInit(): void {
-    this.userService.getUsers().subscribe((data: User[])=>{
-
-      console.log(data);
-      this.users=data;
-    });
+ 
+    }
 
 
 
   }
   
-}
+
