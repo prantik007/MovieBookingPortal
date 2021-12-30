@@ -11,14 +11,16 @@
 
 <div class="container mt-3">
   <h2>Login</h2><br><hr>
-  <form action="/action_page.php">
+  <form (ngSubmit)="ValidateFormAndSubmit()">
     <div class="mb-3 mt-3">
       <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+      <input type="email" [(ngModel)]="email" class="form-control" id="email" placeholder="Enter email" name="email" >
+      <div class="errorMsg">  {{error_email}} </div>
     </div>
     <div class="mb-3">
       <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required>
+      <input type="password" [(ngModel)]="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" >
+      <div class="errorMsg">  {{error_password}} </div>
     </div>
     <div class="form-check mb-3">
       <label class="form-check-label">

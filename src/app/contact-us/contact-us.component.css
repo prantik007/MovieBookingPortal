@@ -1,0 +1,13 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    justify-content: center;
+    width: 35%;
+    margin: auto;
+}
+.errorMsg{
+    color: red;
+    font-style: italic;
+  }

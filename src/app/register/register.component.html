@@ -13,21 +13,21 @@
   <h2>Register</h2>
   <br>
   <hr><br>
-  <form action="#" >
+  <form (ngSubmit)="ValidateFormAndSubmit()" >
   	<div class="mb-3">
     <label for="name">Enter Name:</label>
-      <input type="text" class="form-control" placeholder="Enter Name" id="name" name="name" required/>
-      <div class="invalid-feedback">Please fill out this field.</div>
+      <input type="text" [(ngModel)]="name" class="form-control" placeholder="Enter Name" id="name" name="name" />
+      <div class="errorMsg"> {{error_name}} </div>
     </div>
     <div class="mb-3 mt-3">
       <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required/>
-      <div class="invalid-feedback">Please fill out this field.</div>
+      <input type="email" [(ngModel)]="email" class="form-control" id="email" placeholder="Enter email" name="email" />
+      <div class="errorMsg">  {{error_email}} </div>
     </div>
     <div class="mb-3">
       <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" required/>
-      <div class="invalid-feedback">Please fill out this field.</div>
+      <input type="password" [(ngModel)]="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" />
+      <div class="errorMsg">  {{error_password}} </div>
     </div>
     
     <label for="gender" >Select Gender:</label>
