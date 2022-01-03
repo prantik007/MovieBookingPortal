@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { img_detail_array } from 'src/shared_classes/img_detail_array';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',

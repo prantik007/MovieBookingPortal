@@ -7,13 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
   email:string="";
   password:string="";
 
   error_email:string=""; 
   error_password:string=""; 
-  regexp = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
-  isFormValid:boolean=true;
+ 
 
   isFormValid:boolean=true;
 
@@ -27,23 +31,19 @@ export class LoginComponent implements OnInit {
     if(this.email==null || this.email=="")
       {
         this.error_email="Required";
-<<<<<<< HEAD
-      }else{
-=======
-        this.isFormValid=false;
+
       }
       else {
->>>>>>> 7fae0ff2135fee91472c2ff092e4a5c0713a63d3
+
         if(!this.regexp.test(this.email))
       {
        this.error_email="Invalid email format";
        this.isFormValid=false;
-<<<<<<< HEAD
-=======
+
       }
->>>>>>> 7fae0ff2135fee91472c2ff092e4a5c0713a63d3
+
       }
-  }
+  
       if(this.password==null || this.password=="")
       {
         this.error_password="Required";
@@ -54,12 +54,5 @@ export class LoginComponent implements OnInit {
 
       }
   
+    }
   }
-
-  
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
