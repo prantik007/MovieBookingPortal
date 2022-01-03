@@ -1,5 +1,5 @@
 <body><br>
-  <div class="carousel" >
+ <!-- <div class="carousel" >
 <ngb-carousel *ngIf="images">
   <ng-template ngbSlide>
     <div class="picsum-img-wrapper">
@@ -29,5 +29,20 @@
     </div>
   </ng-template>
 </ngb-carousel>
-</div>
+</div> -->
+
+<ngb-carousel *ngIf="imgDetails" [interval]="3000" [animation]="true">
+  <ng-template ngbSlide *ngFor="let img of imgDetails">
+    <div class="picsum-img-wrapper">
+      <img src={{img.imgSrc}} alt={{img.name}}>
+
+    </div>
+    <div class="carousel-caption">
+      <h3>{{img.name}}</h3>
+      <p>{{img.caption}}</p>
+    </div>
+
+  </ng-template>
+
+</ngb-carousel>
 </body>
