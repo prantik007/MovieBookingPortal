@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { img_detail_array } from 'src/shared_classes/img_detail_array';
+import { movie_detail_array } from 'src/shared_classes/movie_detail_array';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -17,9 +17,9 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-       imgDetails:img_detail_array[]=[
-      {name:"Rio",caption:"BlueSky",imgSrc:"assets/images/rio2.png"},
-      {name:"Spiderman",caption:"Marvel Studios",imgSrc:"assets/images/spiderman.png"},
-      {name:"Wolves",caption:"Marvel Studios",imgSrc:"assets/images/wolves.png"}
-    ];
+  imgDetails:movie_detail_array[]=[
+    {name:"Rio",caption:"BlueSky",imgSrc:"assets/images/rio2.png"},
+    {name:"Spiderman",caption:"Marvel Studios",imgSrc:"assets/images/spiderman.png"},
+    {name:"Wolves",caption:"Marvel Studios",imgSrc:"assets/images/wolves.png"}
+  ];
 }
