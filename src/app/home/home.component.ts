@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { movie_detail_array } from 'src/shared_classes/movie_detail_array';
 import { FormsModule } from '@angular/forms';
+import { UserService } from '../service/user.service';
+import { movies } from 'src/shared_classes/movies';
 
 @Component({
   selector: 'app-home',
@@ -17,9 +19,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  imgDetails:movie_detail_array[]=[
-    {name:"Rio",caption:"BlueSky",imgSrc:"assets/images/rio2.png"},
-    {name:"Spiderman",caption:"Marvel Studios",imgSrc:"assets/images/spiderman.png"},
-    {name:"Wolves",caption:"Marvel Studios",imgSrc:"assets/images/wolves.png"}
-  ];
+  
+  imgDetails:movie_detail_array[]=movies;
 }
