@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { DemoAuthService } from '../service/demo-auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private demoAuth:DemoAuthService) { }
 
   ngOnInit(): void {
   }
@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
 
   isFormValid:boolean=true;
 
+  isAuthenticated:boolean=false;
   regexp = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
 
   ValidateFormAndSubmit(){
@@ -50,8 +51,10 @@ export class LoginComponent implements OnInit {
         this.isFormValid=false;
       }
 
-      if(this.isFormValid){ //code to submit form to database
-
+      if(this.isFormValid){ //code to submit form to service for auth
+        
+        if(this.demoAuth.authenticate(this.email,this.password))       
+        alert("success");
       }
   
     }
