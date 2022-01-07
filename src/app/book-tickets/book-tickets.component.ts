@@ -27,7 +27,16 @@ export class BookTicketsComponent implements OnInit {
   ngOnInit(): void {
     this.movieList=this.movieService.getMovies();
   }
-
+  ticketPrice:number=0;
+  totalPrice:number=0;
   
+  getPrice(name:string){
+    return this.movieList.find(x:string=>x.name===name)
+  }
+  calculateTotalPrice(event:any){
+    let selectedValue = (<HTMLSelectElement>document.getElementById('MovieSelect')).value;
+    this.ticketPrice=this.getPrice(selectedValue);
+
+  }
 
 }
