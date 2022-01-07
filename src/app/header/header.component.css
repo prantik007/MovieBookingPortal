@@ -8,6 +8,10 @@
 li{
     padding-left: 20px;
     padding-right: 0px;
+    
+}
+a{
+  color: white;
 }
 .container-fluid p-5{
     height: 100px;

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { DemoAuthService } from '../service/demo-auth.service';
 @Component({
   selector: 'app-login',
@@ -7,7 +8,7 @@ import { DemoAuthService } from '../service/demo-auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private demoAuth:DemoAuthService) { }
+  constructor(private demoAuth:DemoAuthService,private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -53,8 +54,12 @@ export class LoginComponent implements OnInit {
 
       if(this.isFormValid){ //code to submit form to service for auth
         
-        if(this.demoAuth.authenticate(this.email,this.password))       
-        alert("success");
+        if(this.demoAuth.authenticate(this.email,this.password))  {
+        
+          alert("Logged in");
+          this.router.navigate(['home']);
+        }     
+        
       }
   
     }

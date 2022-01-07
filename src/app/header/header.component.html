@@ -11,7 +11,7 @@
     <p>Best site to book movie tickets!</p> 
   </div>
 
-  <nav class="navbar navbar-expand-sm bg-dark  navbar-dark ">
+  <nav class="navbar navbar-expand-sm  " style="background-color: #39C0ED;">
     <div class="container-fluid">
       <ul class="navbar-nav">
         <li class="nav-item">
@@ -23,17 +23,21 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="register">Register</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link " routerLink="my-account">My Account</a>
-        </li>
+        
         <li class="nav-item">
           <a class="nav-link " routerLink="contact-us">Contact Us</a>
         </li>
         <li class="nav-item">
           <a class="nav-link " routerLink="about-us">About Us</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item"  *ngIf="DemoAuthService.isUserLoggedIn()">
+          <a class="nav-link " routerLink="my-account">My Account</a>
+        </li>
+        <li class="nav-item" *ngIf="!DemoAuthService.isUserLoggedIn()">
           <a class="nav-link" routerLink="login" >Login</a>
+        </li>
+        <li class="nav-item"  *ngIf="DemoAuthService.isUserLoggedIn()">
+          <a class="nav-link" routerLink="logout">Logout</a>
         </li>
       </ul>
     </div>
