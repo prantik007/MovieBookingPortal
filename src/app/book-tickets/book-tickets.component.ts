@@ -31,11 +31,10 @@ export class BookTicketsComponent implements OnInit {
   totalPrice:number=0;
   
   getPrice(name:string){
-    return this.movieList.find(x:string=>x.name===name)
+    
   }
   calculateTotalPrice(event:any){
-    let selectedValue = (<HTMLSelectElement>document.getElementById('MovieSelect')).value;
-    this.ticketPrice=this.getPrice(selectedValue);
+    
 
   }
 
