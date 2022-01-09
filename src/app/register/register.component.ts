@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { FormsModule, PatternValidator } from '@angular/forms';
+import { UserService } from '../service/data/user.service';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -21,7 +23,7 @@ export class RegisterComponent implements OnInit {
 
   isFormValid:boolean=true;
 
-  constructor() { }
+  constructor(private userService:UserService) { }
     
   
 
@@ -62,6 +64,7 @@ export class RegisterComponent implements OnInit {
 
       if(this.isFormValid){ //code to submit form to database
 
+        this.userService.addUser
       }
     }
 

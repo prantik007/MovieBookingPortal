@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { UserService } from '../service/data/user.service';
+import { User } from '../shared_classes/user';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-my-account',
   templateUrl: './my-account.component.html',
@@ -7,9 +9,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyAccountComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService:UserService) { }
+
+  public users:User[]=[];
 
   ngOnInit(): void {
-  }
+
+    this.getAllUser();
+    }
+
+    public getAllUser():void{
+      this.userService.getAllUser().subscribe(
+        (response: User[]) => {
+          this.users=response;
+        },
+        (error: HttpErrorResponse) =>{
+          alert(error.message);
+          
+        });
+        
+      
+    }
+
+  
 
 }

@@ -14,7 +14,7 @@ const routes: Routes = [
   { path:'home', component: HomeComponent },
   { path:'book-tickets', component:BookTicketsComponent},
   { path:'register' , component:RegisterComponent },
-  { path:'my-account' , component: MyAccountComponent,canActivate:[RouterGuardService]},
+  { path:'my-account' , component: MyAccountComponent},
   { path:'contact-us' , component: ContactUsComponent},
   { path:'about-us' , component: AboutUsComponent},
   { path:'login', component:LoginComponent},
