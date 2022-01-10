@@ -30,8 +30,8 @@
    <h5>Select Movie</h5> 
    <form >
     <label for="MovieSelect" class="form-label"></label>
-    <select class="form-select" id="MovieSelect" name="MovieSelect" (change)="calculateTotalPrice($event)">
-      <option *ngFor="let name of movieList" #selected>{{name.name}}</option>
+    <select class="form-select" id="MovieSelect" name="MovieSelect" >
+      <option *ngFor="let mv of movies">{{mv.movieName}}</option>
     </select>
     <br>
     <h6>Ticket Price: {{ticketPrice| currency:'INR'}}</h6>
@@ -41,7 +41,7 @@
     <h5>Select how many seats (max 5):</h5>
     <form>
         <label for="SeatSelect" class="form-label"></label> 
-        <select class="form-select" id="seatSelect" name="seatSelect" (change)="calculateTotalPrice($event)">
+        <select class="form-select" id="seatSelect" name="seatSelect">
           <option *ngFor="let i of [1,2,3,4,5]">{{i}}</option>
         </select>
     </form><br>

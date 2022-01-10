@@ -16,7 +16,7 @@ export class MovieService implements OnInit {
   constructor(private http:HttpClient) { }
 
   public getAllMovie():Observable<Movie[]>{
-    return this.http.get<Movie[]>(`${this.apiUrl}/movie/getAllMovie`);
+    return this.http.get<Movie[]>(`${this.apiUrl}/movie/allMovie`);
   }
 
   }

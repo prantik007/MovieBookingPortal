@@ -13,7 +13,7 @@
   <h2>Register</h2>
   <br>
   <hr><br>
-  <form (ngSubmit)="ValidateFormAndSubmit()" >
+  <form #registerForm="ngForm" (ngSubmit)="ValidateFormAndSubmit(registerForm.value); registerForm.reset()" novalidate>
   	<div class="mb-3">
     <label for="name">Enter Name:</label>
       <input type="text" [(ngModel)]="name" class="form-control" placeholder="Enter Name" id="name" name="name" />
@@ -26,20 +26,22 @@
     </div>
     <div class="mb-3">
       <label for="pwd">Password:</label>
-      <input type="password" [(ngModel)]="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd" />
+      <input type="password" [(ngModel)]="password" class="form-control" id="pwd" placeholder="Enter password" name="password" />
       <div class="errorMsg">  {{error_password}} </div>
     </div>
     
     <label for="gender" >Select Gender:</label>
-    <select class="form-select" id="gender" name="gender" required>
-      <option>Male</option>
+    <select class="form-select" id="gender" name="gender" ngModel required>
+      <option selected>Male</option>
       <option>Female</option>
       <option>Others</option>      
     </select>
     <br>
     
     <button type="submit" id="btn_submit" class="btn btn-primary" >Submit</button>
+    
   </form>
+  <br><div class="submitMessage"> {{submitMessage}} </div>
 </div>
 
 </body>

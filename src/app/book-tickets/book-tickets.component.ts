@@ -1,6 +1,8 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
 import { MovieService } from '../service/data/movie.service';
+import { Movie } from '../shared_classes/movieModel';
 @Component({
   selector: 'app-book-tickets',
   templateUrl: './book-tickets.component.html',
@@ -14,7 +16,7 @@ export class BookTicketsComponent implements OnInit {
   d3=new Date(this.today.setDate(this.today.getDate()+1));
   d4=new Date(this.today.setDate(this.today.getDate()+1));
 
-  movieList:movie_detail_array[]=[];
+  movies:Movie[]=[];
     
   
 
@@ -24,17 +26,19 @@ export class BookTicketsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.movieList=this.movieService.getMovies();
+    this.getAllMovie();
   }
   ticketPrice:number=0;
   totalPrice:number=0;
   
-  getPrice(name:string){
-    
-  }
-  calculateTotalPrice(event:any){
-    
-
-  }
-
+  public getAllMovie():void{
+    this.movieService.getAllMovie().subscribe(
+      (response: Movie[])=>{
+        this.movies=response;
+      },
+      (error: HttpErrorResponse)=>{
+        alert(error.message);
+        
+      });
+}
 }
