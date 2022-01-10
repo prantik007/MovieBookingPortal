@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { movie_detail_array } from 'src/app/shared_classes/movie_detail_array';
-import { movies } from 'src/app/shared_classes/movies';
-import { MovieService } from '../service/movie.service';
+
+import { MovieService } from '../service/data/movie.service';
 @Component({
   selector: 'app-book-tickets',
   templateUrl: './book-tickets.component.html',

@@ -31,15 +31,15 @@
 </ngb-carousel>
 </div> -->
 
-<ngb-carousel *ngIf="imgDetails" [interval]="3000" [animation]="true">
-  <ng-template ngbSlide *ngFor="let img of imgDetails">
+<ngb-carousel *ngIf="movies" [interval]="3000" [animation]="true">
+  <ng-template ngbSlide *ngFor="let mv of movies">
     <div class="picsum-img-wrapper">
-      <img src={{img.imgSrc}} alt={{img.name}}>
+      <img src={{mv.imgSrc}} alt={{mv.movieName}}>
 
     </div>
     <div class="carousel-caption">
-      <h3>{{img.name}}</h3>
-      <p>{{img.caption}}</p>
+      <h3>{{mv.movieName}}</h3>
+      <p>{{mv.movieCaption}}</p>
     </div>
 
   </ng-template>
