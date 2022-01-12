@@ -86,7 +86,7 @@ export class RegisterComponent implements OnInit {
     public onAddUser(registerForm: any):void{
       this.userService.addUser(registerForm).subscribe(
           (response: User)=>{console.log(response);
-          this.submitMessage="User Registered";registerForm.reset()},
+          this.submitMessage="User Registered";},
             (error:HttpErrorResponse)=>{
               alert(error.message);
             }

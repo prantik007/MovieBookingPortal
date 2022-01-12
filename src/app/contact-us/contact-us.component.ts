@@ -1,4 +1,10 @@
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { Contact } from '../shared_classes/contactModel';
+import { NgForm } from '@angular/forms';
+import { ContactService } from '../service/data/contact.service';
 
 @Component({
   selector: 'app-contact-us',
@@ -7,15 +13,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactUsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http:HttpClient,private contactService:ContactService) { }
 
-  ngOnInit(): void {
-  }
+  
 
+  
   name:string="";
   email:string="";
-  msg:string="";
+  message:string="";
 
+  submitMessage:string="";
   error_name:string=""; 
   error_email:string=""; 
   error_msg:string=""; 
@@ -24,8 +31,12 @@ export class ContactUsComponent implements OnInit {
 
   regexp = new RegExp(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
 
+  private apiUrl=environment.apiBaseUrl;
+ngOnInit(): void {
+    this.submitMessage="";
+  }
 
-  onSubmit(){
+  onSubmit(contactForm:any){
       this.error_email="";      
       this.error_msg="";
       this.error_name="";
@@ -49,7 +60,7 @@ export class ContactUsComponent implements OnInit {
       }
   }
 
-      if(this.msg==null || this.msg=="")
+      if(this.message==null || this.message=="")
       {
         this.error_msg="Required";
         this.isFormValid=false;
@@ -57,13 +68,38 @@ export class ContactUsComponent implements OnInit {
 
       if(this.isFormValid){ //code to submit form to database
 
+        console.log(contactForm);
+        this.onSendContact(contactForm);
+        
+
+
+      }
+    }
+
+      /**
+       * onSendContact
+contactForm:any :void      */
+      public onSendContact(contactForm:any):void {
+        this.contactService.addContactMsg(contactForm).subscribe(
+          (response:Contact)=>{this.submitMessage="Message Sent";},
+          (error:HttpErrorResponse)=>{
+            alert(error.message);
+          }
+          
+        );
+      } 
+      
       }
 
 
+    
+  
 
 
 
 
+  
 
-  }
-}
+
+
+

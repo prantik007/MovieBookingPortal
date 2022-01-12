@@ -11,7 +11,7 @@
 <h2>Contact Us</h2><br>
 <hr>
 <div class="container mt-3">
-    <form (ngSubmit)="onSubmit()">
+    <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm.value); " novalidate>
         <div class="mb-3 mt-3">
       <label for="name">Name:</label>
      <input type="text" name="name" class="form-control" placeholder="Enter name" [(ngModel)]="name">
@@ -22,13 +22,13 @@
      <div class="errorMsg">  {{error_email}} </div>
      <br>
      <label for="msg">Enter Message:</label>
-     <textarea name="msg" class="form-control" placeholder="Enter mesage" rows="7" [(ngModel)]="msg"></textarea>
+     <textarea name="message" class="form-control" placeholder="Enter mesage" rows="7" [(ngModel)]="message"></textarea>
      <div class="errorMsg"> {{error_msg}} </div>
      <br>
     <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </form>
-
+    <br><div class="submitMessage"> {{submitMessage}} </div>
 
 </div>
 
