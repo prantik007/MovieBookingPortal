@@ -15,6 +15,7 @@ import { LoginComponent } from './login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {HttpClientModule} from '@angular/common/http';
 import { LogoutComponent } from './logout/logout.component';
+import { MyCartComponent } from './my-cart/my-cart.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { LogoutComponent } from './logout/logout.component';
     ContactUsComponent,
     AboutUsComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    MyCartComponent
     
   ],
   imports: [

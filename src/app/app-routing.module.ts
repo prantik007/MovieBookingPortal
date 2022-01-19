@@ -10,6 +10,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { RouterGuardService } from './service/router-guard.service';
+import { MyCartComponent } from './my-cart/my-cart.component';
 const routes: Routes = [
   { path:'home', component: HomeComponent },
   { path:'book-tickets', component:BookTicketsComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path:'about-us' , component: AboutUsComponent},
   { path:'login', component:LoginComponent},
   { path:'logout',component:LogoutComponent,canActivate:[RouterGuardService]},
+  { path:'my-cart', component:MyCartComponent},
   { path: '**', component: HomeComponent}
   
 ];
